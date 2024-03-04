@@ -2,9 +2,16 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st 
+import sys
+import pathlib
+
+
+code_dir = pathlib.Path(__file__).parent.resolve()
+files_location = code_dir / ".." / "dashboard" / "df.csv"  
+files_location = files_location.resolve()  
 
 #dataframe
-dt = pd.read_csv("df.csv")
+dt = pd.read_csv(files_location)
 
 #sidebar
 with st.sidebar:
